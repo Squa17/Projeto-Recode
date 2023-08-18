@@ -6,7 +6,16 @@
 }
 
 
-
+.btn-sm-square{
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0;
+}
 
 
 
@@ -25,6 +34,89 @@
     border: 1px solid #ffffff;
     border-radius: 35px;
     transition: 0.3s;
+
+
+}
+
+/*=============== promocoes =========== */
+
+
+.package-item {
+
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+}
+
+.package-item img{
+
+    transition: 0.5s;
+}
+
+.package-item:hover img{
+
+    transform: scale(1.1);
+}
+
+.btn{
+    font-family: 'Nuito', sans-serif;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secundary{
+    color: #ffffff;
+}
+
+.btn-square{
+
+    width: 38px;
+    height: 38px;
+}
+
+
+/*=============== destaque =========== */
+
+.destaque-item{
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    transition: 0.5s;
+}
+
+.destaque-item:hover{
+    background: var(--primary);
+}
+
+
+.destaque-item *{
+    transition: 0.5s;
+
+}
+
+.destaque-item:hover *{
+    color: var(--light) !important;
+}
+
+
+/*=============== destinos =========== */
+
+.destination img{
+    transition: 0.5s;
+}
+
+.destination a:hover img{
+
+    transform: scale(1.1);
+}
+
+
+
+/*=============== hero-header =========== */
+
+.hero-header {
+
+    background: linear-gradient(rgba(20,20,31,0.7), rgba(20,20,31,0.7)), url(/img/bg-hero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 
 }
