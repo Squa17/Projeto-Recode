@@ -36,11 +36,11 @@ input[type="email"]{
 
 
 input[type="submit"]{
-  width: 70%;
+  
   background-color: black;
   color: white;
   font-family:Montserrat;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -73,3 +73,5 @@ img{
     width: 50%;
     
     }
+
+    
