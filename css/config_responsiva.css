@@ -1,0 +1,92 @@
+@media screen and (max-width: 400px){
+  *{
+    margin: 0;
+  }
+  
+  form{
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+     
+  }
+  input{
+    margin-top: 1rem;
+    padding:0.5rem ;
+    border-radius: 2rem;
+
+    
+  }
+
+  
+
+  input[type="email"]{
+    color: rgb(0, 0, 0);
+    font-family:Montserrat;
+    font-size: 22px;
+    font-weight: 400;
+    width: 100%;
+  }
+
+
+  input[type="password"]{
+    color: rgb(0, 0, 0);
+    font-family:Montserrat;
+    font-size: 22px;
+    font-weight: 400;
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+
+  input[type="submit"]{
+    background-color: grey;
+    color: rgb(253, 251, 251);
+    font-family:Montserrat;
+    font-size:  16px;
+    font-weight: 700;
+    width: 20%;
+    
+  }
+  input[type="submit"]:hover{
+    cursor: pointer;
+  }
+ 
+
+
+  img{
+   
+    min-width: 30%;
+    max-width: 50%;
+    min-width: 25%;
+    max-width: 35%;
+    }
+    
+ 
+    
+    
+/* 
+img{
+
+  min-width: 30%;
+    max-width: 50%;
+  min-width: 15%;
+  max-width: 5%;
+  } */
+  
+
+  .tama{
+    width: 100%;
+    
+    }
+
+
+
+    
+  }

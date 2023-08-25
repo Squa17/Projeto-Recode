@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+}
+main{
+  margin-top: 17rem;
+  margin-left:2rem;
+  
+  
+} 
+
+form{
+  /* display: flex;
+  flex-direction: column; */
+  width: 60%;
+  margin-left: 2rem;
+}
+input{
+  margin-top: 2rem;
+  padding:0.53rem ;
+  border-radius: 2rem;
+}
+input[type="email"]{
+  color: rgb(0, 0, 0);
+  font-family:Montserrat;
+  font-size: 22px;
+  font-weight: 400;
+  width: 80%;
+}
+
+
+
+input[type="password"]{
+  color: rgb(0, 0, 0);
+  font-family:Montserrat;
+  font-size: 22px;
+  font-weight: 400;
+  width: 80%;
+}
+
+
+
+
+
+
+
+input[type="submit"]{
+  width: 80%;
+  background-color: black;
+  color: white;
+  font-family:Montserrat;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+
+input[type="submit"]:hover{
+  cursor: pointer;
+}
+
+  
+ 
+
+/* 
+img{
+
+  min-width: 30%;
+    max-width: 50%;
+  min-width: 15%;
+  max-width: 25%;
+  }
+   */
+
+   .tamanho{
+  width: 70%;
+  
+  }
+
+  
+  .tama{
+    width: 50%;
+    
+    }
