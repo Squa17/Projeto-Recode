@@ -32,7 +32,7 @@ public class AlunoController {
 	public String listarAlunos(Model model) { 
 		List<Aluno> aluno = alunoService.getAllAluno();
 		model.addAttribute("aluno", aluno);
-		return "ListarAlunos";
+		return "pages/alunos/ListarAlunos";
 	}
 	
 	@GetMapping("/novo")
@@ -41,7 +41,7 @@ public class AlunoController {
 		List<Curso> cursos = cursoService.getAllCursos();
 		model.addAttribute("aluno", aluno);
 		model.addAttribute("cursos", cursos);
-		return "alunoForm";
+		return "pages/alunos/alunoForm";
 	}
 	
 	@PostMapping("/save")
@@ -58,7 +58,7 @@ public class AlunoController {
 		Aluno aluno = alunoService.getAlunoById(id);
 		model.addAttribute("aluno", aluno);
 		model.addAttribute("cursos", cursoService.getAllCursos());
-		return "editarAluno";
+		return "pages/alunos/editarAluno";
 	}
 	
 	@PostMapping("/editar/{id}")

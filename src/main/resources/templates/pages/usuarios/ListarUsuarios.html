@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+	  <title>Rehab</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="/img/fenix.png" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+	
+	  	<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div class="container mt-3">
+		
+        <h2>Lista de Usuários</h2>
+        <a class="btn btn-primary" th:href="@{/usuarios/novo}">Cadastrar</a>
+        <table class="table table-bordered mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Senha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario : ${usuario}">
+                    <td th:text="${usuario.id}"></td>
+                    <td th:text="${usuario.name}"></td>
+                    <td th:text="${usuario.password}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+  <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+
+</html>

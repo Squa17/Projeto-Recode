@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	  <title>Rehab</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="/img/fenix.png" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+ <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+  
+  	<div th:replace="~{fragments/navbar :: navbar}"></div>
+  
+	<nav class="navbar navbar-expand-lg navbar-dark ">
+		<a sec:authorize="hasRole('ADMIN')"  class="navbar-brand" th:href="@{/cursos}">Listagem de Cursos</a>
+		<a sec:authorize="hasRole('ADMIN')"  class="navbar-brand" th:href="@{/alunos}">Listagem de Alunos</a>
+	</nav>
+
+	<div class="container mt-3">
+		<h2>Banco de Talentos</h2>
+		
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>CPF</th>
+					<th>Imagem</th>
+					<th>Email</th>
+					<th>Telefone</th>
+					<th>Curso</th>
+					<th sec:authorize="hasRole('ADMIN')" >Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="aluno : ${aluno}">
+					<td th:text="${aluno.id}"></td>
+					<td th:text="${aluno.nome}"></td>
+					<td th:text="${aluno.cpf}"></td>
+					<td><img th:src="${aluno.imgUrl}" alt="Imagem do Aluno" style="max-width: 100px; max-height: 100px;" /></td>
+					<td th:text="${aluno.email}"></td>
+					<td th:text="${aluno.telefone}"></td>
+					<td th:text="${#strings.arrayJoin(aluno.cursos.![nome], ', ')}"></td>
+					<td>
+						<a sec:authorize="hasRole('ADMIN')"  class="btn btn-info btn-sm"
+							th:href="@{/alunos/editar/{id}(id=${aluno.id})}">Editar</a>
+						<a sec:authorize="hasRole('ADMIN')"  class="btn btn-danger btn-sm"
+							th:href="@{/alunos/deletar/{id}(id=${aluno.id})}">Excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a sec:authorize="hasRole('ADMIN')"  class="btn btn-primary mb-2" th:href="@{/alunos/novo}">Adicionar</a>
+	</div>
+ <!-- ======= Footer ======= -->
+ 
+   <div th:replace="~{fragments/footer :: footer}"></div>
+ 
+ <!-- End Footer -->
+ 
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+  
+    <!-- Vendor JS Files -->
+  
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="/vendor/aos/aos.js"></script>
+  
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

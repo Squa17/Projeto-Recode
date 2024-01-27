@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	 <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Rehab</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="/img/fenix.png" rel="icon">
+ 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  
+  
+  
+   <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+  <link href="/css/main.css" rel="stylesheet">
+  
+  
+  
+ <link href="/css/cadastro.css" rel="stylesheet">
+
+
+
+
+
+
+</head>
+
+<body>
+	<div th:replace="~{fragments/navbar :: navbar}"> </div>
+
+ 
+ 
+ 
+   <div id="container">
+        <!-- Logo -->
+        <img src="/img/RehHab.png" width="130px" alt="Logo">
+    
+        <!-- Formulário -->
+        <h2>Cadastre-se</h2>
+        
+       
+        
+       
+
+            <form th:action="@{/usuarios/novo/save}" method="post" th:object="${usuario}">
+            
+                <label for="name"></label>
+                <input type="text"  id="name" name="name" th:field="*{name}"  placeholder="Nome" />
+           
+
+            
+                <label for="password"></label>
+                <input type="password"  id="password" name="password" th:field="*{password}" placeholder="Senha" />
+            
+<div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+       </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div th:replace="~{fragments/footer :: footer}"></div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

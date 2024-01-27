@@ -29,15 +29,18 @@ public class CursoController {
 		public String listCursos(Model model) {
 			List<Curso> cursos = cursoService.getAllCursos();
 			model.addAttribute("cursos", cursos);
-			return "ListarCursos";
+			return "pages/curso/ListarCursos";
 		}
+		
+		
+		
 		
 		// Formulário de criação
 		@GetMapping("/novo")
 		public String showFormForAdd(Model model) {
 			Curso curso = new Curso();
 			model.addAttribute("curso", curso);
-			return "cursoForm";
+			return "pages/curso/cursoForm";
 		}
 		
 		// Persistencia da criação
@@ -52,8 +55,11 @@ public class CursoController {
 		public String showFormForUpdate(@PathVariable Long id, Model model) {
 			Curso curso = cursoService.getCursoById(id);
 			model.addAttribute("curso", curso);
-			return "editarCurso";
+			return "pages/curso/editarCurso";
 		}
+		
+		
+		
 		
 		// Persistencia da edição
 		@PostMapping("/editar/{id}")

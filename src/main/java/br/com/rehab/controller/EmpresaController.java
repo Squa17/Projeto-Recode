@@ -29,7 +29,7 @@ public class EmpresaController {
 		public String listEmpresas(Model model) {
 			List<Empresa> empresas = empresaService.getAllEmpresas();
 			model.addAttribute("empresas", empresas);
-			return "ListarEmpresas";
+			return "pages/empresa/ListarEmpresas";
 		}
 
 	// Formulário de criação
@@ -37,7 +37,7 @@ public class EmpresaController {
 	public String showFormForAdd(Model model) {
 		Empresa empresa = new Empresa();
 		model.addAttribute("empresa", empresa);
-		return "empresaForm";
+		return "pages/empresa/empresaForm";
 	}
 
 	// Persistencia da criação
@@ -52,7 +52,7 @@ public class EmpresaController {
 	public String showFormForUpdate(@PathVariable Long id, Model model) {
 		Empresa empresa = empresaService.getEmpresaById(id);
 		model.addAttribute("empresa", empresa);
-		return "editarEmpresa";
+		return "pages/empresa/editarEmpresa";
 	}
 
 	// Persistencia da edição
