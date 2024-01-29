@@ -48,7 +48,7 @@ public class SecurityConfig {
       .and()
       .withUser("admin").password(passwordEncoder().encode("password")).roles("USER", "ADMIN");
 		
-		 
+	  auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());	 
 	}
 	
 	
