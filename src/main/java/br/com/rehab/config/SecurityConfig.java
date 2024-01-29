@@ -31,7 +31,7 @@ public class SecurityConfig {
 	 @Bean
 	    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 			http.csrf(csrf -> csrf.disable())
-					.authorizeHttpRequests((authorize) -> authorize.requestMatchers("/", "pages/login", "/cursos/**", "/vagas/**",  "/empresas/**",  "/alunos/**", "/usuarios/novo/**",
+					.authorizeHttpRequests((authorize) -> authorize.requestMatchers("/", "pages/login", "/cursos/**", "/vagas/**",  "/empresas/**",  "/alunos/**", "/usuarios/novo/**", "/usuarios/novo/save/**",
 							"css/**", "/img/**", "/js/**", "/scss/**", "/vendor/**",  "/index")
 							.permitAll().requestMatchers( "/admin/**", "/usuarios/**").hasRole("ADMIN"))
 					.formLogin(form -> form.loginPage("/login").loginProcessingUrl("/login").defaultSuccessUrl("/")
@@ -44,10 +44,12 @@ public class SecurityConfig {
 	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-      .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
-      .and()
-      .withUser("admin").password(passwordEncoder().encode("password")).roles("USER", "ADMIN");	 
+    	auth.inMemoryAuthentication()
+    	  .withUser("user").password(passwordEncoder().encode("password")).roles("USER")
+     	 .and()
+   	   .withUser("admin").password(passwordEncoder().encode("password")).roles("USER", "ADMIN");
+
+    	auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 	}
 	
 	
